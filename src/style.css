@@ -1,12 +1,42 @@
+body{
+    overflow-x: hidden;
+}
+
 h1{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(78, 14, 138);
 }
 
+
 .titulo{
-    width: 100%;
+    margin-left: 160px;
+    width: 70%;
     text-align: center;
     margin-bottom: 100px;
+}
+
+p{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+span{
+    font-weight: 700;
+    color: #4a0e7e;
+}
+
+.botones{
+    text-align: right;
+    padding: 8px;
+    position: relative;
+    left: 68%;
+    bottom: 130px;
+    width: 30%;
+}
+
+.botones button{
+    margin-left: 10px
 }
 
 .container{
@@ -21,27 +51,107 @@ h1{
     align-items: center;
     text-align: center;
     width: 100%;
+    height: 600px;
+    border-radius: 40px;
+    margin-left: 100px;
+    overflow: hidden;
 }
 
 .banner img{
-    width: 900px;
+    width: 110%;
     border-radius: 40px;
+    object-fit: cover;
 }
 
-.circulos{
+.circulos {
+    /* 1. Reemplazamos el color sólido por un degradado */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-image: linear-gradient(to right, #4a0e7e, #8e44ad); /* De morado oscuro a uno más claro */
+    padding-left: 140px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Tu código para el ancho completo está perfecto */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.imagen{
-    margin-top: 90px;
-    padding: 50px;
-    width: 200px;
+.imagen {
+    /* 2. Ajustamos los márgenes para un centrado correcto */
+    margin: 90px 45px 50px; /* 90px arriba, 40px a los lados, 50px abajo */
+    
+    width: 250px;
     height: 200px;
-    border-radius: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0 0 25px 10px transparent;
+    transition: box-shadow 0.4s ease-in-out;
 }
 
-.imagen img{
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+/* El resto de tu código (.imagen:hover, .imagen img, etc.) no necesita cambios */
+.imagen:hover {
+    box-shadow: 0 0 165px 10px rgba(224, 247, 13, 0.651);
 }
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.clases{
+    margin-top: 100px;
+    font-size: 30px;
+    word-spacing: 10px;
+}
+
+.form{
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.datos{
+    padding: 10px;
+    position: relative;
+    left: 350px;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dias{
+    margin-bottom: 30px;
+}
+
+.datos input{
+    width: 300px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+}
+
+.dias input{
+    margin-left: 10px;
+    position: relative;
+    top: 30px;
+    right: 100px;
+    width: 50px;
+}
+
+.dias label{
+    position: relative;
+    left: 80px;
+    margin-left: 30px;
+}
+
+
+
+
