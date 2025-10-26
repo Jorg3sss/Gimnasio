@@ -16,6 +16,7 @@ if(isset($_GET) == "id"){
         <?php if($id == "1"): ?>
             <div class="titulo">
                 <h1>Iniciar sesión</h1>
+                <button onclick="window.location='index.php'">Volver</button>
                 <p>Introduce tus credenciales para  <span>comenzar</span></p>
             </div>
 
@@ -35,6 +36,7 @@ if(isset($_GET) == "id"){
         <?php if($id == "2"): ?>
             <div class="titulo">
                 <h1>Registrarse</h1>
+                <button onclick="window.location='index.php'">Volver</button>
                 <p>Comencemos introduciendo tus <span>datos</span></p>
             </div>
 
@@ -68,11 +70,11 @@ if(isset($_GET) == "id"){
                             <label>Teléfono</label>
                             <input type="text" maxlength="10" name="telefono" required>
                             <label>Correo electronico</label>
-                            <input type="email" name="correo" required>
+                            <input type="email" name="correo" maxlength="100" required>
                             <label>Contraseña</label>
-                            <input type="password" name="contra1" required>
+                            <input type="password" name="contra1" maxlength="50" required>
                             <label>Confirmar contraseña</label>
-                            <input type="password" name="contra2" required>
+                            <input type="password" name="contra2" maxlength="50" required>
                             <input type="submit" value="Confirmar">
                             </div>
                     </form>

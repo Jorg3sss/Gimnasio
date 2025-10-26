@@ -47,6 +47,60 @@ if($_SERVER["REQUEST_METHOD"]== "POST" ){
         header("Location: ../credenciales.php?id=2");
         exit();
     }
+
+    if(strlen($año) < 4){
+        $_SESSION["error"] = "El año debe ser de 4 dígitos";
+        header("Location: ../credenciales.php?id=2");
+        exit();
+    }
+
+    if($contra1 !== $contra2){
+        $_SESSION["error"] = "Las contraseñas no coinciden";
+        header("Location: ../credenciales.php?id=2");
+        exit();
+    }
+
+    try{
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM usuarios WHERE correo = ?");
+        $stmt->execute([$correo]);
+        $resultado = $stmt->fetchColumn();
+
+        if($resultado > 0){
+            $_SESSION["error"] = "El correo ya ha sido asociado a otra cuenta";
+            header("Location: ../credenciales.php?id=2");
+            exit();
+        }
+
+        $stmt = $conn->prepare("SELECT COUNT(*) FROM usuarios WHERE telefono = ?");
+        $stmt->execute([$tel]);
+        $resultado = $stmt->fetchColumn();
+
+        if($resultado > 0){
+            $_SESSION["error"] = "El teléfono ya ha sido asociado a otra cuenta";
+            header("Location: ../credenciales.php?id=2");
+            exit();
+        }
+
+        $fecha = $dia . "-" . $mes . "-" . $año;
+        $contra = password_hash($contra1, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, fechan, telefono, correo, contraseña) VALUES (?, ?, ?, ?, ?, ?)" );
+
+        if($stmt->execute([$nombre, $apellido, $fecha, $tel, $correo, $contra])){
+            $id = $conn->lastInsertId();
+
+            echo "<p>Usuario creado con éxito</p>";
+            echo "<a href='../index.php'>volver</a>";
+
+            $_SESSION["id"] = $id;
+        }
+    }
+
+    catch(PDOException $e){
+        $_SESSION["error"] = "Error en la base de datos: " . $e->getMessage();
+        header("Location: ../credenciales.php?id=2");
+        exit();
+    }
+    
 }
 
 ?>
