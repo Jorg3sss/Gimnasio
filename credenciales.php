@@ -1,86 +1,126 @@
-<?php 
-session_start();
-$id = null;
-if(isset($_GET) == "id"){
-    $id = $_GET["id"];
-}
-?>
-
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <title>Credenciales</title>
-        <link rel="stylesheet" href="src/style.css">
-    </head>
-    <body>
-        <?php if($id == "1"): ?>
-            <div class="titulo">
-                <h1>Iniciar sesión</h1>
-                <button onclick="window.location='index.php'">Volver</button>
-                <p>Introduce tus credenciales para  <span>comenzar</span></p>
-            </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f3fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-            <div class="container">
-                <div class="form">
-                    <form action="src/login.php" method="POST">
-                        <label>Correo electronico</label>
-                        <input type="email" name="correo" required>
-                        <label>Contraseña</label>
-                        <input type="password" name="contra" required>
-                        <input type="submit" value="Confirmar">
-                    </form>
-                </div> 
-            </div>
-        <?php endif; ?>
+  .login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px;
+  }
 
-        <?php if($id == "2"): ?>
-            <div class="titulo">
-                <h1>Registrarse</h1>
-                <button onclick="window.location='index.php'">Volver</button>
-                <p>Comencemos introduciendo tus <span>datos</span></p>
-            </div>
+  h1 {
+    color: #4B0082;
+    margin-bottom: 20px;
+  }
 
-            <div class="error">
-                <?php if(isset($_SESSION["error"])){
-                    echo "<p>" . $_SESSION["error"] . "</p>";
-                    unset($_SESSION["error"]);
-                } ?>  
-            </div>
+  p {
+    color: #333;
+    margin-bottom: 25px;
+  }
 
-            <div class="container">
-                <div class="form">
-                    <form action="src/registrar.php" method="POST">
-                        <div class="datos">
-                            <label>Nombre(s)</label>
-                            <input type="text" name="nombre" maxlength="50" required>
-                            <label>Apellidos</label>
-                            <input type="text" name="apellido" maxlength="50" required>
-                            <div class="fecha">
-                                <label>Fecha de nacimiento</label>
-                                <div class="dias">
-                                    <label>Dia</label>
-                                    <label>Mes</label>
-                                    <label>Año</label>
+  p span {
+    color: #4B0082;
+    font-weight: bold;
+  }
 
-                                    <input type="text" maxlength="2" name="dia" required>
-                                    <input type="text" maxlength="2" name="mes" required>
-                                    <input type="text" maxlength="4" name="año" required>
-                                </div>
-                            </div>
-                            <label>Teléfono</label>
-                            <input type="text" maxlength="10" name="telefono" required>
-                            <label>Correo electronico</label>
-                            <input type="email" name="correo" maxlength="100" required>
-                            <label>Contraseña</label>
-                            <input type="password" name="contra1" maxlength="50" required>
-                            <label>Confirmar contraseña</label>
-                            <input type="password" name="contra2" maxlength="50" required>
-                            <input type="submit" value="Confirmar">
-                            </div>
-                    </form>
-                </div> 
-            </div>
-        <?php endif; ?>
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
 
-    </body>
+  label {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+  }
+
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    border-color: #4B0082;
+    outline: none;
+  }
+
+  .btn {
+    background-color: #4B0082;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    font-weight: 600;
+  }
+
+  .btn:hover {
+    background-color: #35006b;
+  }
+
+  .volver {
+    background: none;
+    border: 1px solid #4B0082;
+    color: #4B0082;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+
+  .volver:hover {
+    background-color: #4B0082;
+    color: #fff;
+  }
+</style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h1>Iniciar sesión</h1>
+    <button class="volver" onclick="window.history.back()">Volver</button>
+    <p>Introduce tus credenciales para <span>comenzar</span></p>
+
+    <form>
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="text" id="correo" name="correo" required>
+      </div>
+
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required>
+      </div>
+
+      <button type="submit" class="btn">Confirmar</button>
+    </form>
+  </div>
+
+</body>
 </html>

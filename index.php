@@ -41,13 +41,13 @@
                     <a href="src/spinning.php"><img src="img/imagen3.webp" alt=""></a>
                 </div>
                 <div class="imagen">
-                    <a href=""><img src="img/imagen4.jpg" alt=""></a>
+                    <a href="src/cross.php"><img src="img/imagen4.jpg" alt=""></a>
                 </div>
                 <div class="imagen">
-                    <a href=""><img src="img/imagen5.jpg" alt=""></a>
+                    <a href="src/Zumba"><img src="img/imagen5.jpg" alt=""></a>
                 </div>
                 <div class="imagen">
-                    <a href=""><img src="img/imagen6.jpg" alt=""></a>
+                    <a href="src/box.php"><img src="img/imagen6.jpg" alt=""></a>
                 </div>
             </div>
             <div class="info">
