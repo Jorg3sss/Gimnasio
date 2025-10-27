@@ -35,7 +35,7 @@
 
     <div class="container">
         <div class="banner">
-            <img src="../img/box1.jpg" alt="">
+            <img src="../img/imagen6.jpg" alt="">
         </div>
 
         <div class="info">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="imagen2">
-            <img src="../img/coach-box.jpg" alt="coach">
+            <img src="../img/carlos.jpg" alt="coach">
         </div>
 
         <div class="info-couch">

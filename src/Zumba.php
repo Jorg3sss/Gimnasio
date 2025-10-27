@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if(!isset($_SESSION['id'])){
+    header("Location: ../credenciales.php?id=1"); // o la ruta correcta
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,7 +40,7 @@
 
     <div class="container">
         <div class="banner">
-            <img src="../img/zumba1.jpg" alt="">
+            <img src="../img/imagen5.jpg" alt="">
         </div>
 
         <div class="info">
@@ -47,7 +52,7 @@
         </div>
 
         <div class="imagen2">
-            <img src="../img/coach-zumba.jpg" alt="coach">
+            <img src="../img/coach4.jpg" alt="coach">
         </div>
 
         <div class="info-couch">

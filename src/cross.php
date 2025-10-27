@@ -35,7 +35,7 @@
 
     <div class="container">
         <div class="banner">
-            <img src="../img/crossfit1.jpg" alt="">
+            <img src="../img/imagen4.jpg" alt="">
         </div>
 
         <div class="info">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="imagen2">
-            <img src="../img/coach-crossfit.jpg" alt="coach">
+            <img src="../img/coachj.jpg" alt="coach">
         </div>
 
         <div class="info-couch">

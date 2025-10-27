@@ -44,7 +44,7 @@
                     <a href="src/cross.php"><img src="img/imagen4.jpg" alt=""></a>
                 </div>
                 <div class="imagen">
-                    <a href="src/Zumba"><img src="img/imagen5.jpg" alt=""></a>
+                    <a href="src/zumba.php"><img src="img/imagen5.jpg" alt=""></a>
                 </div>
                 <div class="imagen">
                     <a href="src/box.php"><img src="img/imagen6.jpg" alt=""></a>
