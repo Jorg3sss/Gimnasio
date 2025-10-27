@@ -1,12 +1,66 @@
+body{
+    overflow-x: hidden;
+}
+
 h1{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: rgb(78, 14, 138);
 }
 
+
 .titulo{
-    width: 100%;
+    margin-top: 100px;
+    margin-left: 160px;
+    width: 70%;
     text-align: center;
     margin-bottom: 100px;
+}
+
+.titulo1{
+    z-index: -1;
+    position: relative;
+    bottom: 10px;
+    right: 10px;
+    background-color: #2a064b;
+    width: 110%;
+    height: 100px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.titulo1 h1{
+    color: white;
+    padding: 20px;
+}
+
+
+p{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+button{
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+span{
+    font-weight: 700;
+    color: #4a0e7e;
+}
+
+.botones{
+    text-align: right;
+    padding: 8px;
+    position: relative;
+    left: 68%;
+    bottom: 130px;
+    width: 30%;
+}
+
+.botones button{
+    margin-left: 10px
 }
 
 .container{
@@ -14,34 +68,481 @@ h1{
     text-align: center;
     margin-left: 100px;
     width: 80%;
-    height: 900px;
+    min-height: calc(100vh - 50px);
+    padding-bottom: 150px;
 }
 
 .banner{
     align-items: center;
     text-align: center;
     width: 100%;
+    height: 600px;
+    border-radius: 40px;
+    margin-left: 100px;
+    overflow: hidden;
+    margin-top: -100px;
 }
 
 .banner img{
-    width: 900px;
+    width: 110%;
     border-radius: 40px;
+    object-fit: cover;
 }
 
-.circulos{
+.circulos {
+    /* 1. Reemplazamos el color sólido por un degradado */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-image: linear-gradient(to right, #4a0e7e, #8e44ad); /* De morado oscuro a uno más claro */
+    padding-left: 140px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Tu código para el ancho completo está perfecto */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.imagen{
-    margin-top: 90px;
-    padding: 50px;
-    width: 200px;
+.imagen {
+    /* 2. Ajustamos los márgenes para un centrado correcto */
+    margin: 90px 45px 50px; /* 90px arriba, 40px a los lados, 50px abajo */
+    
+    width: 250px;
     height: 200px;
-    border-radius: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0 0 25px 10px transparent;
+    transition: box-shadow 0.4s ease-in-out;
 }
 
-.imagen img{
-    width: 200px;
+/* El resto de tu código (.imagen:hover, .imagen img, etc.) no necesita cambios */
+.imagen:hover {
+    box-shadow: 0 0 165px 10px rgba(224, 247, 13, 0.651);
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.clases{
+    margin-top: 100px;
+    font-size: 30px;
+    word-spacing: 10px;
+}
+
+.form{
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.datos{
+    padding: 10px;
+    position: relative;
+    left: 350px;
+    align-items: center;
+    text-align: center;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dias{
+    margin-bottom: 30px;
+}
+
+.datos input{
+    width: 300px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+}
+
+.dias input{
+    margin-left: 10px;
+    position: relative;
+    top: 30px;
+    right: 100px;
+    width: 50px;
+}
+
+.dias label{
+    position: relative;
+    left: 80px;
+    margin-left: 30px;
+}
+
+.imagen2 {
+    /* 2. Ajustamos los márgenes para un centrado correcto */
+    margin: 90px 45px 50px; /* 90px arriba, 40px a los lados, 50px abajo */
+    width: 250px;
+    height: 230px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    box-shadow: 0 0 25px 10px transparent;
+    transition: box-shadow 0.4s ease-in-out;
+}
+
+/* El resto de tu código (.imagen:hover, .imagen img, etc.) no necesita cambios */
+.imagen2:hover {
+    box-shadow: 0 0 65px 30px rgba(184, 196, 23, 0.651);
+}
+
+.imagen2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.no-usuario{
+    color: white;
+    position: relative;
+    bottom: 170px;
+    text-align: right;
+}
+
+.volver{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    
+}
+
+.volver button{
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(255, 208, 0);
+    width: 100px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.volver button:hover{
+    transform: scale(1.1);
+}
+
+.titulo2{
+    margin-top: -100px;
+    margin-left: 160px;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.titulo2 p{
+    font-weight: 500;
+    margin-left: 100px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    word-spacing: 5px;
+}
+
+.info {
+    width: fit-content; 
+    padding-left: 30px; 
+    padding-right: 30px;
+    padding-top: 55px; 
+    padding-bottom: 50px;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    background-image: linear-gradient(to right, #6723a1, #8e44ad);
+}
+
+.info p {
+    color: rgb(0, 0, 0);
+    line-height: 27px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+
+.name-couch{
+    margin-left: 100px;
+    font-size: 25px;
+    letter-spacing: 10px;
+    word-spacing: 5px;
+}
+
+.info-couch{
+    border-radius: 10px;
+    width: 550px;
+    height: 430px;
+    position: relative;
+    left: 400px;
+    bottom: 290px;
+    background-image: linear-gradient(to right, #6723a1, #8e44ad);
+}
+
+.info-couch p{
+    line-height: 25px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    position: relative;
+    top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.fotos{
+    display: flex;
+
+}
+
+.fotos img{
+    position: relative;
+    left: 130px;
+    width: 300px;
+    margin-left: 40px;
+}
+
+.Apuntar{
+    margin-left: 120px;
+    margin-top: 100px;
+}
+
+.Apuntar button{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    width: 500px;
+    height: 60px;
+    border: none;
+    background-color: rgb(73, 71, 71);
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.Apuntar button:hover{
+    transform: scale(1.1);
+}
+
+.container2{
+    align-items: center;
+    text-align: center;
+    margin-left: 100px;
+    width: 80%;
+    height: 2700px;
+    padding-bottom: 100px;
+}
+
+.barra{
+    position: relative;
+    bottom: 70px;
+    margin-left: 230px;
+    background-image: linear-gradient(to right, #292829, #585858);
+    width: 70%;
+    height: 8px;
+    margin-bottom: 100px;
+}
+
+.icons{
+    border-radius: 10px;
+    margin-top: -100px;
+    position: relative;
+    left: 450px;
+    width: 400px;
+    height: 180px;
+    border: 2px solid rgb(235, 193, 6);
+    display: flex;
+    margin-bottom: 50px;
+
+}
+
+.duración{
+    margin-top: 30px;
+    margin-left: 80px;
+}
+
+.intensidad{
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.icons img{
+    width: 30px;
+}
+
+.horario{
+    position: relative;
+    left: 400px;
+    margin-top: 50px;
+    border: 2px solid rgb(235, 193, 6);
+    width: 500px;
     height: 200px;
+}
+
+.reloj{
+    position: relative;
+    top: 50px;
+    right: 160px;
+
+}
+
+.reloj img{
+    width: 30px;
+}
+
+.usuario{
+    position: absolute;
     border-radius: 100px;
+    text-align: center;
+    left: 1350px;
+    top: 10px;
+    background-image: linear-gradient(to right, #6723a1, #8e44ad);
+    height: 80px;
+    width: 80px;
+    transition: transform 0.3s ease;
+}
+
+.usuario img{
+    margin-top: 8px;
+    width: 50px;
+}
+
+.usuario:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+
+.botones{
+    position: relative;
+    bottom: 200px;
+    padding: 10px;
+}
+
+.botones button{
+    margin-left: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(255, 208, 0);
+    width: 100px;
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.botones button:hover{
+    transform: scale(1.1);
+}
+
+.razon{
+    height: 400px;
+    display: flex;
+    background-image: linear-gradient(to right, #ffd001, #eec822);
+    margin-bottom: 100px;
+}
+
+.texto1{
+    width: 500px;
+    margin-top: 30px;
+    margin-left: 130px;
+}
+
+.texto1 h1{
+    font-weight: 2000;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-size: 38;
+}
+
+.texto1 p{
+    font-size: 18px;
+    margin-top: 30px;
+    word-spacing: 10px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+}
+
+.razones-container{
+    margin-top: 30px;
+    margin-left: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 300px;
+    align-content: flex-start;
+}
+.texto2{
+    margin-right: 50px;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.texto3{
+    text-align: center;
+    width: 300px;
+    height: 100px;
+}
+
+.texto4{
+    margin-top: 20px;
+    margin-right: 50px;
+    text-align: center;
+    bottom: 30px;
+    width: 300px;
+    height: 100px;
+}
+
+.texto5{
+    margin-top: 20px;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+}
+
+.icon{
+    position: relative;
+    bottom: 240px;
+    left: 100px;
+    text-align: center;
+    height: 320px;
+    width: 320px;
+    background-color: #5f5f7a;
+    border-radius: 180px;
+
+}
+
+.icon img{
+    padding: 10px;
+    height: 300px;
+    width: 300px;
+    border-radius: 180px;
+}
+
+.inscribirse{
+    position: relative;
+    bottom: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+.inscribirse button{
+    margin-left: 50px;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    width: 500px;
+    height: 60px;
+    border: none;
+    background-color: rgb(153, 0, 255);
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+}
+
+.inscribirse button:hover{
+    transform: scale(1.1);
 }
